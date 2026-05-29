@@ -114,7 +114,7 @@ const getProcessedTemplate = () => {
     }
     @media (max-width: 991px) {
       /* Restore sidebar and toggle on mobile */
-      .sidebar-div { display: block !important; width: 0 !important; height: 0 !important; overflow: visible !important; }
+      .sidebar-div { position: absolute !important; width: 0 !important; height: 0 !important; padding: 0 !important; margin: 0 !important; overflow: visible !important; }
       .sidebar-toggle { 
         display: flex !important; 
         align-items: center !important; 
@@ -139,7 +139,7 @@ const getProcessedTemplate = () => {
       }
       .sidebar.active { left: 0 !important; }
       
-      .report-div { margin-left: 0 !important; width: 100vw !important; max-width: 100% !important; padding: 10px !important; overflow-x: hidden !important; }
+      .report-div { margin-left: 0 !important; width: 100% !important; flex: 0 0 100% !important; max-width: 100% !important; padding: 10px !important; overflow-x: hidden !important; }
       .main-header { flex-direction: column !important; padding: 15px !important; height: auto !important; }
       .header-logo { max-width: 80% !important; height: auto !important; margin-bottom: 10px !important; }
       
