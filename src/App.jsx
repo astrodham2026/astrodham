@@ -102,7 +102,10 @@ const getProcessedTemplate = () => {
       .report-div { margin-left: 285px !important; width: calc(100% - 285px) !important; }
     }
     @media (max-width: 991px) {
-      .report-div { margin-left: 0 !important; width: 100% !important; }
+      .sidebar-div, .sidebar-toggle, .sidebar { display: none !important; }
+      .report-div { margin-left: 0 !important; width: 100% !important; padding: 15px !important; }
+      .main-header { flex-direction: column !important; padding: 15px !important; height: auto !important; }
+      .header-logo { max-width: 80% !important; height: auto !important; margin-bottom: 10px !important; }
     }
     
     /* Table headers / Charts */
@@ -574,28 +577,28 @@ export default function App() {
       {/* ══ 1. HEADER ══════════════════════════════════════════ */}
       <header
         style={{ background: `linear-gradient(135deg, ${T.purpleDark} 0%, ${T.purple} 100%)`, borderBottom: `1px solid ${T.shellBorder}` }}
-        className="h-16 px-6 flex items-center justify-between shadow-2xl z-50 sticky top-0"
+        className="min-h-[4rem] px-4 py-3 flex flex-col lg:flex-row items-center justify-between gap-4 shadow-2xl z-50 sticky top-0"
       >
         {/* Logo + Title */}
-        <div className="flex items-center gap-3">
-          <div style={{ background: T.white }} className="h-12 px-2 rounded-xl shadow-lg flex items-center justify-center">
-            <img src={`data:image/png;base64,${logoBase64}`} style={{ height: '44px', width: 'auto', maxWidth: '160px', objectFit: 'contain' }} alt="Astrodham" />
+        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-center sm:text-left w-full lg:w-auto">
+          <div style={{ background: T.white }} className="h-10 sm:h-12 px-2 rounded-xl shadow-lg flex items-center justify-center">
+            <img src={`data:image/png;base64,${logoBase64}`} style={{ height: '36px', width: 'auto', maxWidth: '160px', objectFit: 'contain' }} alt="Astrodham" />
           </div>
           <div>
-            <h1 style={{ color: T.gold }} className="font-extrabold text-sm tracking-widest leading-none">
+            <h1 style={{ color: T.gold }} className="font-extrabold text-xs sm:text-sm tracking-widest leading-none">
               ASTRODHAM TEMPLATE EDITOR
             </h1>
-            <p style={{ color: T.amber }} className="text-[10px] font-bold mt-1 uppercase tracking-wider">
+            <p style={{ color: T.amber }} className="text-[9px] sm:text-[10px] font-bold mt-1 uppercase tracking-wider">
               Premium Astrology Report Customizer
             </p>
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex items-center gap-3">
+        <div className="flex flex-wrap items-center justify-center gap-2 w-full lg:w-auto">
           <span
             style={{ background: T.shellCard, color: T.gold, border: `1px solid ${T.shellBorder}` }}
-            className="text-[10px] font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full flex items-center gap-1.5"
+            className="hidden xl:flex text-[10px] font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full items-center gap-1.5"
           >
             <Edit3 size={11} /> DIRECT EDIT ACTIVE
           </span>
@@ -606,25 +609,25 @@ export default function App() {
               ? { background: T.purple, border: `1px solid ${T.gold}`, color: T.gold }
               : { background: T.shellCard, color: '#c4b0e8', border: `1px solid ${T.shellBorder}` }
             }
-            className="px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all"
+            className="px-4 py-2 flex-1 lg:flex-none justify-center rounded-full font-bold text-[10px] sm:text-xs uppercase tracking-wider flex items-center gap-2 transition-all"
           >
-            <Compass size={14} /> Update Charts {isDrawerOpen ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
+            <Compass size={14} /> <span className="hidden sm:inline">Update Charts</span><span className="sm:hidden">Charts</span> {isDrawerOpen ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
           </button>
 
           <button
             onClick={() => { iframeRef.current?.contentWindow?.focus(); iframeRef.current?.contentWindow?.print(); }}
             style={{ background: T.shellCard, color: '#c4b0e8', border: `1px solid ${T.shellBorder}` }}
-            className="px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all hover:brightness-125"
+            className="px-4 py-2 flex-1 lg:flex-none justify-center rounded-full font-bold text-[10px] sm:text-xs uppercase tracking-wider flex items-center gap-2 transition-all hover:brightness-125"
           >
-            <Printer size={14} /> Print / PDF
+            <Printer size={14} /> Print
           </button>
 
           <button
             onClick={exportHtmlReport}
             style={{ background: `linear-gradient(135deg, ${T.purple}, ${T.gold})` }}
-            className="px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg text-white transition-all hover:brightness-110"
+            className="px-5 py-2 flex-1 lg:flex-none justify-center rounded-full font-bold text-[10px] sm:text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg text-white transition-all hover:brightness-110"
           >
-            <Download size={14} /> Export Clean HTML
+            <Download size={14} /> Export
           </button>
         </div>
       </header>
