@@ -103,9 +103,22 @@ const getProcessedTemplate = () => {
     }
     @media (max-width: 991px) {
       .sidebar-div, .sidebar-toggle, .sidebar { display: none !important; }
-      .report-div { margin-left: 0 !important; width: 100% !important; padding: 15px !important; }
+      .report-div { margin-left: 0 !important; width: 100vw !important; max-width: 100% !important; padding: 10px !important; overflow-x: hidden !important; }
       .main-header { flex-direction: column !important; padding: 15px !important; height: auto !important; }
       .header-logo { max-width: 80% !important; height: auto !important; margin-bottom: 10px !important; }
+      
+      /* Force all tables to scroll horizontally on mobile instead of breaking screen width */
+      table, .table { 
+        display: block !important; 
+        width: 100% !important; 
+        max-width: 100% !important;
+        overflow-x: auto !important; 
+        -webkit-overflow-scrolling: touch; 
+        white-space: nowrap !important;
+      }
+      
+      /* Ensure chart wrappers scale properly */
+      .chart-container, .kundli_birth_chart { max-width: 100% !important; overflow-x: auto !important; }
     }
     
     /* Table headers / Charts */
