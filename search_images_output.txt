@@ -1,0 +1,139 @@
+--- IMG TAGS ---
+0: <img class="header-logo" src="../../assets/images/astro-logo.webp" alt="">
+1: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/77d394beb9a23a4318d48.png" alt="Scorpio"/>
+2: <img class="img-fluid" src="../../assets/images/ZodiacStars/scorpio star.webp" alt="Scorpio Star"/>
+3: <img class="img-fluid p-2" src="../../assets/images/Panchang/Weekday.webp" alt="Weekday"/>
+4: <img class="img-fluid p-2" src="../../assets/images/Panchang/Nakshatra and Pada.png" alt="Nakshatra and Pada"/>
+5: <img class="img-fluid p-2" src="../../assets/images/Panchang/bhava.webp" alt="Bhava"/>
+6: <img class="img-fluid p-2" src="../../assets/images/Panchang/Yoga.webp" alt="Yoga"/>
+7: <img class="south_type_chart_cls"  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjM1MCIgaWQ9ImNoYXJ0U3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHg9IjAiIHk9IjAiIHdpZH
+8: <img class="south_type_chart_cls" style="" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjM1MCIgaWQ9ImNoYXJ0U3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHg9IjAiIHk9Ij
+9: <img class="south_type_chart_cls"  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjM1MCIgaWQ9ImNoYXJ0U3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHg9IjAiIHk9IjAiIHdpZH
+10: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/214609ffcef243e9a5288.png" alt="సింహం"/>
+11: <img class="img-fluid" src="../../assets/images/ZodiacStars/cancer star.webp" alt="Cancer Star"/>
+12: <img src="../../assets/images/Ascendant Report/love.webp" alt="love"/>
+13: <img src="../../assets/images/Ascendant Report/health.webp" alt="health"/>
+14: <img src="../../assets/images/Ascendant Report/health (1).webp" alt="health (1)"/>
+15: <img src="../../assets/images/Ascendant Report/power.webp" alt="health (1)"/>
+16: <img src="../../assets/images/Ascendant Report/color.webp" alt="health (1)"/>
+17: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/fd4c18234cec425ed91a10.png" alt="Planet" />
+18: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/77d394beb9a23a4318d48.png" alt="ZodiacSign" />
+19: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/dca2bf87633f5e4375d79.png" alt="Houses" />
+20: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/8157c1c0ae33223046a310.png" alt="Planet" />
+21: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/77d394beb9a23a4318d48.png" alt="ZodiacSign" />
+22: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/dca2bf87633f5e4375d79.png" alt="Houses" />
+23: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/35b71e019ec3bf7cbad110.png" alt="Planet" />
+24: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/63f4f4fc0610f768ddd310.png" alt="ZodiacSign" />
+25: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/9edaf619a115ff9fae7d5.png" alt="Houses" />
+26: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/a3623f669daf29a00f236.png" alt="Planet" />
+27: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/214609ffcef243e9a5288.png" alt="ZodiacSign" />
+28: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/16a1f1fa42a9ab41dd716.png" alt="Houses" />
+29: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/0ca67b7e97e0d767d3005.png" alt="Planet" />
+30: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/35f4c352c6c58e76942c7.png" alt="ZodiacSign" />
+31: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/a2e54bd0dd16efc8d00c8.png" alt="Houses" />
+32: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/220a0e3bcb89607bb0507.png" alt="Planet" />
+33: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/214609ffcef243e9a5288.png" alt="ZodiacSign" />
+34: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/16a1f1fa42a9ab41dd716.png" alt="Houses" />
+35: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/dbf416bdb9bee8474c4f7.png" alt="Planet" />
+36: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/c06701c3cb4c022311098.png" alt="ZodiacSign" />
+37: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/57ee0cf9865947cc938f5.png" alt="Houses" />
+38: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/fd797843449f9e7d2b287.png" alt="Planet" />
+39: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/214609ffcef243e9a5288.png" alt="ZodiacSign" />
+40: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/16a1f1fa42a9ab41dd716.png" alt="Houses" />
+41: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/483b8854772e319c6e5f9.png" alt="Planet" />
+42: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/cd422a5e8c7e15a32b5210.png" alt="ZodiacSign" />
+43: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/fdaf0655b53e7dcd88856.png" alt="Houses" />
+44: <img class="" src="../../assets/images/General/Kaal Sarp.webp" alt="Kaal Sarp" />
+45: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/fd797843449f9e7d2b287.png" alt="Rahu" />
+46: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/483b8854772e319c6e5f9.png" alt="Ketu" />
+47: <img class="south_type_chart_cls"  src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjM1MCIgaWQ9ImNoYXJ0U3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHg9IjAiIHk9IjAiIHdpZH
+48: <img class="" src="../../assets/images/Planets/e-mars.webp" alt="Kaal Sarp" />
+49: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/63f4f4fc0610f768ddd310.png" alt="Planet Sign" />
+50: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/9edaf619a115ff9fae7d5.png" alt="Mars" />
+51: <img src="../../assets/images/General/pointers.webp" alt="Pointers" />
+52: <img class="w-100" src="../../assets/images/General/pointers.webp" alt="Pointers" />
+53: <img class="w-100" src="../../assets/images/General/pointers.webp" alt="Pointers" />
+54: <img src="../../assets/images/General/pointers.webp" alt="Pointers" />
+55: <img class="copyright_logo" src="../../assets/images/astro-vastu-new-color-logo.webp" alt="logo" />
+56: <img class="south_type_chart_cls" src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUwIiBoZWlnaHQ9IjM1MCIgaWQ9ImNoYXJ0U3ZnIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHR
+57: <img class="" src="../../assets/images/Planets/e-saturn.webp" alt="Kaal Sarp" />
+58: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/77d394beb9a23a4318d48.png" alt="Aries" />
+59: <img class="img-fluid" src="https://master.sriastrovastu.com/uploaded_files/c06701c3cb4c022311098.png" alt="Mars" />
+60: <img src="../../assets/images/General/pointers.webp" alt="Pointers" />
+61: <img src="https://master.sriastrovastu.com/uploaded_files/4011c222f407610326199.png" alt="Gemstone" />
+62: <img src="https://master.sriastrovastu.com/uploaded_files/d239ac25a6123c1abe018.png" alt="Gemstone" />
+63: <img src="https://master.sriastrovastu.com/uploaded_files/ccff3444e90446402a385.png" alt="Gemstone" />
+64: <img src="https://master.sriastrovastu.com/uploaded_files/900677dd099f4bbe4bca8.png" alt="Gemstone" />
+
+--- ALL UNIQUE SOURCES ---
+../../assets/images/Ascendant Report/color.webp
+../../assets/images/Ascendant Report/health (1).webp
+../../assets/images/Ascendant Report/health.webp
+../../assets/images/Ascendant Report/love.webp
+../../assets/images/Ascendant Report/power.webp
+../../assets/images/General/Kaal Sarp.webp
+../../assets/images/General/pointers.webp
+../../assets/images/Panchang/Nakshatra and Pada.png
+../../assets/images/Panchang/Weekday.webp
+../../assets/images/Panchang/Yoga.webp
+../../assets/images/Panchang/bhava.webp
+../../assets/images/Planets/e-mars.webp
+../../assets/images/Planets/e-saturn.webp
+../../assets/images/ZodiacStars/cancer star.webp
+../../assets/images/ZodiacStars/scorpio star.webp
+../../assets/images/astro-logo.webp
+../../assets/images/astro-vastu-new-color-logo.webp
+../../assets/jquery/jquery-3.7.1.min.js
+../../assets/js/bootstrap.bundle.min.js
+https://master.sriastrovastu.com/uploaded_files/0ca67b7e97e0d767d3005.png
+https://master.sriastrovastu.com/uploaded_files/16a1f1fa42a9ab41dd716.png
+https://master.sriastrovastu.com/uploaded_files/214609ffcef243e9a5288.png
+https://master.sriastrovastu.com/uploaded_files/220a0e3bcb89607bb0507.png
+https://master.sriastrovastu.com/uploaded_files/35b71e019ec3bf7cbad110.png
+https://master.sriastrovastu.com/uploaded_files/35f4c352c6c58e76942c7.png
+https://master.sriastrovastu.com/uploaded_files/4011c222f407610326199.png
+https://master.sriastrovastu.com/uploaded_files/483b8854772e319c6e5f9.png
+https://master.sriastrovastu.com/uploaded_files/57ee0cf9865947cc938f5.png
+https://master.sriastrovastu.com/uploaded_files/63f4f4fc0610f768ddd310.png
+https://master.sriastrovastu.com/uploaded_files/77d394beb9a23a4318d48.png
+https://master.sriastrovastu.com/uploaded_files/8157c1c0ae33223046a310.png
+https://master.sriastrovastu.com/uploaded_files/900677dd099f4bbe4bca8.png
+https://master.sriastrovastu.com/uploaded_files/9edaf619a115ff9fae7d5.png
+https://master.sriastrovastu.com/uploaded_files/a2e54bd0dd16efc8d00c8.png
+https://master.sriastrovastu.com/uploaded_files/a3623f669daf29a00f236.png
+https://master.sriastrovastu.com/uploaded_files/c06701c3cb4c022311098.png
+https://master.sriastrovastu.com/uploaded_files/ccff3444e90446402a385.png
+https://master.sriastrovastu.com/uploaded_files/cd422a5e8c7e15a32b5210.png
+https://master.sriastrovastu.com/uploaded_files/d239ac25a6123c1abe018.png
+https://master.sriastrovastu.com/uploaded_files/dbf416bdb9bee8474c4f7.png
+https://master.sriastrovastu.com/uploaded_files/dca2bf87633f5e4375d79.png
+https://master.sriastrovastu.com/uploaded_files/fd4c18234cec425ed91a10.png
+https://master.sriastrovastu.com/uploaded_files/fd797843449f9e7d2b287.png
+https://master.sriastrovastu.com/uploaded_files/fdaf0655b53e7dcd88856.png
+https://www.googletagmanager.com/ns.html?id=GTM-PTD4LZR
+
+--- DIV CLASSES ---
+ascandent_img_container
+astro_vastu_logo
+copyright_logo
+header-logo
+hero_sec
+hero_sec_img
+hero_sec_txt
+hero_wrapper
+img-fluid
+img_container
+img_remed
+logo_sec
+planet_img_container
+planet_logo
+plnt_eft_img
+plnt_img_cnt
+rudraksh_img
+scorpion_logo
+stone_img_container
+weakday_logo
+zodiac_regular_txt
+zodiac_sign_txt
+zodiac_sign_wrapper
+zodiac_star_logo

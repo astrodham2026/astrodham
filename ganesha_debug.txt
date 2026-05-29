@@ -1,0 +1,10 @@
+=== astro_vastu_logo HTML CONTEXT ===
+
+--- match at 2425 ---
+op" id="sidebarBackdrop"></div></div><div class="report-div"><div class="astrovastu_main_body"><div class="astrovastu_wrapper bg_cream cstm_sec_margin_bt"><div class="container-fluid"><div class="hero_wrapper position-relative"><div class="hero_sec"><div class="hero_sec_img"></div></div><div class="astro_vastu_logo"></div><div class="shubh_labh_text text_brown">|| शुभ लाभ ||</div><div class="hero_sec_txt"><span class="prm_txt text_purple">ప్రీమియం</span><span class="lifeknd_txt text_purple">జీవిత కుండలి</span><span class="report_txt text_purple">నివేదిక</span><div class="line_container d-flex justify-content-center align-items-center gap-1"><div class="line bg_purple"></div><div class="plus font10 text_purple mt-1">*</div><div class="line bg_purple"></div></div></div></div></div></div><!-- Main Banner Sec
+
+
+=== GANESHA REFERENCES ===
+
+
+=== INLINE STYLE TAGS (first 5) ===

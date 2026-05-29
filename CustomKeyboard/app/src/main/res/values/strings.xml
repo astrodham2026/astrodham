@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Offline Keyboard</string>
+    <string name="keyboard_service_label">My Offline Keyboard</string>
+    <string name="instruction_title">Setup Your Offline Keyboard</string>
+    <string name="instruction_step1">1. Click \'Enable Keyboard\' and toggle on \'My Offline Keyboard\' in your device settings.</string>
+    <string name="instruction_step2">2. Click \'Switch Keyboard\' and select \'My Offline Keyboard\' as the active layout.</string>
+    <string name="btn_enable">Enable Keyboard</string>
+    <string name="btn_switch">Switch Keyboard</string>
+    <string name="mode_symbols">\?123</string>
+</resources>

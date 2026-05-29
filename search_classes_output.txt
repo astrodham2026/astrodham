@@ -1,0 +1,6 @@
+=== MATCHES FOR astro_vastu_logo ===
+class="astrovastu_wrapper bg_cream cstm_sec_margin_bt"><div class="container-fluid"><div class="hero_wrapper position-relative"><div class="hero_sec"><div class="hero_sec_img"></div></div><div class="astro_vastu_logo"></div><div class="shubh_labh_text text_brown">|| ??? ??? ||</div><div class="hero_sec_txt"><span class="prm_txt text_purple">????????</span><span class="lifeknd_txt text_purple">????? ??????</span><span class="report_txt text_purple">???????</span><div class="line_container d-flex 
+----------------------------------------
+=== MATCHES FOR hero_sec_img ===
+div class="astrovastu_main_body"><div class="astrovastu_wrapper bg_cream cstm_sec_margin_bt"><div class="container-fluid"><div class="hero_wrapper position-relative"><div class="hero_sec"><div class="hero_sec_img"></div></div><div class="astro_vastu_logo"></div><div class="shubh_labh_text text_brown">|| ??? ??? ||</div><div class="hero_sec_txt"><span class="prm_txt text_purple">????????</span><span class="lifeknd_txt text_purple">????? ??????</span><span class="report_txt text_purple">???????</s
+----------------------------------------

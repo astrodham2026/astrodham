@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SuperWord Desktop</title>
+    
+    <!-- VISUAL CRASH REPORTER: Instantly displays errors on screen if the app crashes -->
+    <script>
+      window.addEventListener('error', function(event) {
+        const crashDiv = document.createElement('div');
+        crashDiv.style.position = 'fixed';
+        crashDiv.style.top = '0';
+        crashDiv.style.left = '0';
+        crashDiv.style.width = '100%';
+        crashDiv.style.background = '#ef4444';
+        crashDiv.style.color = 'white';
+        crashDiv.style.padding = '20px';
+        crashDiv.style.zIndex = '999999';
+        crashDiv.style.fontFamily = 'monospace';
+        crashDiv.style.fontSize = '16px';
+        crashDiv.style.whiteSpace = 'pre-wrap';
+        crashDiv.style.boxShadow = '0 10px 20px rgba(0,0,0,0.5)';
+        crashDiv.innerHTML = '<strong>🚨 SYSTEM CRASH REPORTED 🚨</strong><br/><br/>' + 
+                              event.message + '<br/>at ' + event.filename + ':' + event.lineno;
+        document.body.appendChild(crashDiv);
+      });
+    </script>
+  </head>
+  <body style="background-color: #0a0b0e; margin: 0;">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

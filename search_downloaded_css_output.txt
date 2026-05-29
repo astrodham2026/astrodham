@@ -1,0 +1,131 @@
+=== FILENAME: astrovastu.css ===
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec_img {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .astro_vastu_logo {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .shubh_labh_text {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .prm_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .lifeknd_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .report_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .line {
+--- Snippet around match in astrovastu.css ---
+head_name {
+  font-family:popM !important;
+}
+
+.astrovastu_main_body .sec_padding {
+    padding-inline: var(--inline-lg-padding);
+}
+
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec {
+    width: 100%;
+    aspect-ratio: 3/4;
+}
+
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec_img {
+    background-image: url('../images/hero_banner.png');
+    background-size: cover;  
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+    transition: background-image 0.8s ease-in-out;
+
+}
+
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper 
+------------------------------
+--- Snippet around match in astrovastu.css ---
+{
+    background-image: url('../images/hero_banner.png');
+    background-size: cover;  
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%;
+    margin: 0;
+    transition: background-image 0.8s ease-in-out;
+
+}
+
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .astro_vastu_logo {
+    background-image: url('../images/astro-vastu-new-color-logo.webp');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 125px; 
+    height: 80px; 
+    position: absolute;
+    top: 1%;
+    right: 0%;
+}
+
+
+.astrovastu_main_body .astrovastu
+------------------------------
+=== FILENAME: common_style.css ===
+=== FILENAME: responsive.css ===
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec_img {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .shubh_labh_text {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .prm_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .lifeknd_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .report_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .shubh_labh_text {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .prm_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .lifeknd_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .report_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .shubh_labh_text {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .prm_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .lifeknd_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .report_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .astro_vastu_logo {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .shubh_labh_text {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .prm_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .lifeknd_txt {
+.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .report_txt {
+--- Snippet around match in responsive.css ---
+m_head_gap {
+    padding-top: var(--cstm-padding-lg);
+	    margin-bottom: var(--cstm-hdng-lg-margin);
+}
+
+.astrovastu_main_body .cstm_inner_elemnt_gapping {
+    margin-bottom: var(--cstm-padding-sm);
+}
+
+@media screen and (max-width: 1200px) {
+	.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec_img {
+	    background-image: url('../images/small_landing.webp');
+	    background-size: cover;  
+	    background-position: center;
+	    background-repeat: no-repeat;
+	    margin: 0;
+	    transition: background-image 0.8s ease-in-out;
+	}
+
+	.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_se
+------------------------------
+--- Snippet around match in responsive.css ---
+  padding-top: var(--cstm-padding-sm);
+	    margin-bottom: var(--cstm-hdng-sm-margin);
+	}
+
+	.astrovastu_main_body .container {
+	    max-width: var(--screen-max-width) !important;
+	    padding-inline: var( --inline-xm-padding) !important;
+	}
+
+	.astrovastu_main_body .astrovastu_wrapper .hero_wrapper .astro_vastu_logo {
+	    background-image: url('../images/astro-vastu-new-color-logo.webp');
+	    background-size: contain;
+	    background-repeat: no-repeat;
+	    background-position: center;
+	    width: 60px;
+	    height: 80px;
+	    position: absolute;
+	    top: 1%;
+	    right: 1%;
+	}
+
+	.astrovastu_main_body .astr
+------------------------------

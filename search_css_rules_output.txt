@@ -1,0 +1,4 @@
+
+=== INLINE ELEMENTS ===
+<div class="hero_sec_img">
+<div class="astro_vastu_logo">

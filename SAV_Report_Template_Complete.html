@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Astro Vastu - Vedic Astrology Report Template</title>
+
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ============================================
+           SRI ASTRO VASTU - CUSTOM CSS
+           ============================================ */
+
+        :root {
+            --purple-primary: #6f42c1;
+            --purple-light: #e2d9f3;
+            --purple-dark: #5a2d91;
+            --cream-bg: #faf8f5;
+            --brown-text: #5c4d3c;
+            --pink-light: #fdf2f8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--cream-bg);
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        /* === HEADER STYLES === */
+        .main-header {
+            background: linear-gradient(135deg, var(--purple-primary), var(--purple-dark));
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .header-logo {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: contain;
+        }
+
+        .header-title {
+            font-size: 24px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        /* === SIDEBAR STYLES === */
+        .sidebar-div {
+            position: fixed;
+            left: 0;
+            top: 80px;
+            width: 250px;
+            height: calc(100vh - 80px);
+            background: white;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .sidebar {
+            padding: 20px;
+            overflow-y: auto;
+            height: 100%;
+        }
+
+        .sidebar-header {
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--purple-primary);
+            margin-bottom: 15px;
+        }
+
+        .sidebar-header h4 {
+            color: var(--purple-primary);
+            font-weight: 700;
+        }
+
+        .nav-category {
+            font-size: 12px;
+            color: #666;
+            text-transform: uppercase;
+            margin: 15px 0 8px;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: block;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            background: var(--purple-light);
+            color: var(--purple-primary);
+        }
+
+        .sidebar-toggle {
+            position: fixed;
+            left: 260px;
+            top: 90px;
+            background: var(--purple-primary);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        /* === MAIN CONTENT === */
+        .report-div {
+            margin-left: 250px;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .astrovastu_wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* === HERO SECTION === */
+        .hero_sec {
+            background: linear-gradient(135deg, var(--purple-primary), #8b5cf6);
+            border-radius: 20px;
+            padding: 40px;
+            color: white;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero_sec::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .hero_wrapper {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero_sec_txt h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero_sec_txt p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* === SECTION STYLES === */
+        .cstm_sec_margin_bt {
+            margin-bottom: 30px;
+        }
+
+        .bg_cream {
+            background-color: var(--cream-bg);
+        }
+
+        .para_wrapper {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+
+        .para_head_txt {
+            color: var(--purple-primary);
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--purple-light);
+        }
+
+        .para_txt {
+            font-size: 15px;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .sub-header {
+            color: var(--purple-primary);
+            font-weight: 600;
+        }
+
+        /* === TABLE STYLES === */
+        .table {
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        .basic_details_table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .basic_details_table th {
+            background: var(--purple-primary);
+            color: white;
+            padding: 15px;
+            font-weight: 600;
+        }
+
+        .basic_details_table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .basic_details_table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .basic_details_table tr:hover {
+            background: var(--purple-light);
+        }
+
+        .basic_td_data {
+            font-weight: 600;
+            color: var(--purple-dark);
+        }
+
+        /* === TEXT COLORS === */
+        .text_purple {
+            color: var(--purple-primary) !important;
+        }
+
+        .text_brown {
+            color: var(--brown-text) !important;
+        }
+
+        .text_darker {
+            color: #333 !important;
+        }
+
+        .text_light_purple {
+            color: #9b7ed9 !important;
+        }
+
+        .text_light_blue {
+            color: #6bb3d9 !important;
+        }
+
+        .text_light_green {
+            color: #6bb37d !important;
+        }
+
+        .text_light_brown {
+            color: #b39d85 !important;
+        }
+
+        /* === BACKGROUNDS === */
+        .bg_purple {
+            background-color: var(--purple-primary) !important;
+        }
+
+        .bg_pink_light {
+            background-color: var(--pink-light) !important;
+        }
+
+        /* === BORDERS === */
+        .border_purple {
+            border: 1px solid var(--purple-primary) !important;
+        }
+
+        .border_bottom_purple {
+            border-bottom: 2px solid var(--purple-primary);
+        }
+
+        .border_right_purple {
+            border-right: 2px solid var(--purple-primary);
+        }
+
+        /* === FONT SIZES === */
+        .font10 { font-size: 10px; }
+        .font12 { font-size: 12px; }
+        .font14 { font-size: 14px; }
+        .font16 { font-size: 16px; }
+        .font18 { font-size: 18px; }
+        .font20 { font-size: 20px; }
+        .font22 { font-size: 22px; }
+
+        .font600 { font-weight: 600; }
+        .font700 { font-weight: 700; }
+
+        /* === SPACING === */
+        .cstm_sec_margin_bt {
+            margin-bottom: 25px;
+        }
+
+        .cstm_inner_elemnt_gapping {
+            gap: 15px;
+        }
+
+        .cstm_line_height {
+            line-height: 1.8;
+        }
+
+        .cstm_para_wrapper {
+            padding: 20px;
+        }
+
+        /* === HEADING STYLES === */
+        .heading_txt {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--purple-primary);
+        }
+
+        .sidebar-main-header {
+            font-size: 18px;
+            color: var(--purple-primary);
+        }
+
+        /* === SPECIAL SECTIONS === */
+        .yogini_dasha_table {
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .yogini_dasha_table th {
+            background: var(--purple-primary);
+            color: white;
+            padding: 12px;
+        }
+
+        .vmsht_dasha_table {
+            background: white;
+            border-radius: 12px;
+        }
+
+        /* === PLANET STYLES === */
+        .plnt_eft_container {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .plnt_eft_header {
+            background: linear-gradient(135deg, var(--purple-primary), #8b5cf6);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+        }
+
+        .plnt_img_cnt {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .plnt_eft_img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .plnt {
+            padding: 10px;
+            background: var(--purple-light);
+            border-radius: 8px;
+        }
+
+        /* === DASHAS === */
+        .ydasha_predc_wrapper {
+            background: linear-gradient(135deg, var(--purple-primary), #8b5cf6);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        /* === PREDICTION LINES === */
+        .yearly_prediction_line {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .line_head {
+            width: 8px;
+            height: 8px;
+            background: var(--purple-primary);
+            border-radius: 50%;
+            margin-top: 8px;
+            flex-shrink: 0;
+        }
+
+        .line_tail {
+            flex: 1;
+        }
+
+        .line {
+            height: 2px;
+            background: var(--purple-primary);
+        }
+
+        .line.bg_purple {
+            background: var(--purple-primary);
+        }
+
+        .cstm_v_line {
+            width: 2px;
+            background: var(--purple-primary);
+            min-height: 30px;
+        }
+
+        /* === GEMSTONE STYLES === */
+        .gemstone_main_wrapper {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+        }
+
+        .gemstone_head_txt {
+            color: var(--purple-primary);
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .gemstne_wrapper {
+            border: 2px solid var(--purple-light);
+            border-radius: 12px;
+            padding: 15px;
+            background: var(--cream-bg);
+        }
+
+        /* === NUMEROLOGY === */
+        .neumerology_dtls_table {
+            background: white;
+            border-radius: 12px;
+        }
+
+        .numbers_container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .density_num_cont, .name_num_cont, .redical_num_cont, .evil_num_cont {
+            padding: 15px 25px;
+            background: var(--purple-light);
+            border-radius: 10px;
+            text-align: center;
+            min-width: 100px;
+        }
+
+        .nurology_circle_txt {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--purple-primary);
+        }
+
+        /* === ZODIAC CHART === */
+        .zodiac_sign_wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .zodiac_sign_txt {
+            padding: 10px;
+            text-align: center;
+            background: var(--purple-light);
+            border-radius: 5px;
+            font-size: 12px;
+        }
+
+        /* === REMEDIES === */
+        .remeds_container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .stone_img_container, .rudraksh_container {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* === SADE SATI === */
+        .saturday_wrapper {
+            background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+            padding: 20px;
+            border-radius: 15px;
+        }
+
+        /* === KAAL SARPA === */
+        .kaalsarp_dasha_wrapper {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            border-left: 4px solid var(--purple-primary);
+        }
+
+        /* === CHARTS === */
+        .cstm_chart_table {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .chart_wrapper {
+            padding: 15px;
+            background: var(--cream-bg);
+            border-radius: 10px;
+        }
+
+        .planetary_chart_table {
+            background: white;
+        }
+
+        /* === FOOTER === */
+        .copyright_wrapper {
+            background: var(--purple-primary);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin-top: 30px;
+            border-radius: 15px;
+        }
+
+        /* === UTILITIES === */
+        .no-overflow {
+            overflow: visible;
+        }
+
+        .scrollable-container {
+            overflow-y: auto;
+        }
+
+        .text_decoration_none {
+            text-decoration: none;
+        }
+
+        .top_sec_border {
+            border-top: 3px solid var(--purple-primary);
+        }
+
+        .direct-link {
+            color: var(--purple-primary);
+        }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 768px) {
+            .sidebar-div {
+                transform: translateX(-100%);
+            }
+
+            .sidebar-div.show {
+                transform: translateX(0);
+            }
+
+            .report-div {
+                margin-left: 0;
+            }
+
+            .sidebar-toggle {
+                left: 10px;
+            }
+
+            .hero_sec_txt h1 {
+                font-size: 24px;
+            }
+
+            .heading_txt {
+                font-size: 18px;
+            }
+
+            .table {
+                font-size: 12px;
+            }
+        }
+
+        /* === PRINT STYLES === */
+        @media print {
+            .sidebar-div, .sidebar-toggle {
+                display: none !important;
+            }
+
+            .report-div {
+                margin-left: 0;
+            }
+
+            .para_wrapper {
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+        }
+
+        /* === ANIMATIONS === */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .para_wrapper {
+            animation: fadeIn 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- ========== MAIN HEADER ========== -->
+    <header class="main-header">
+        <div class="header-left">
+            <img class="header-logo" src="https://paid.sriastrovastu.com/assets/images/astro-logo.webp" alt="Sri Astro Vastu Logo">
+            <h1 class="header-title">SRI ASTRO VASTU</h1>
+        </div>
+    </header>
+
+    <!-- ========== SIDEBAR ========== -->
+    <div class="sidebar-div" id="sidebar">
+        <nav class="sidebar scrollable-container">
+            <div class="sidebar-header">
+                <h4><i class="fas fa-star"></i> Astrology Report</h4>
+            </div>
+            <div class="sidebar-nav">
+                <a href="#basicDetails" class="nav-link active">Basic Details</a>
+                <a href="#panchangDetails" class="nav-link">Panchang Details</a>
+                <a href="#planeteryPosition" class="nav-link">Planetary Position</a>
+                <a href="#vimshottariDasha" class="nav-link">Vimshottari Dasha</a>
+                <a href="#yoginiDasha" class="nav-link">Yogini Dasha</a>
+                <a href="#ascandentReport" class="nav-link">Ascendant Report</a>
+                <a href="#rashiReport" class="nav-link">Rashi Report</a>
+                <a href="#numorologyPrediction" class="nav-link">Numerology</a>
+                <a href="#gemStonePrediction" class="nav-link">Gemstone</a>
+                <a href="#rudrakshaPrediction" class="nav-link">Rudraksha</a>
+                <a href="#sadeSati" class="nav-link">Sade Sati</a>
+                <a href="#kaalSarpaDasha" class="nav-link">Kaal Sarp</a>
+                <a href="#mangalDosh" class="nav-link">Manglik</a>
+                <a href="#planetEffect" class="nav-link">Planet Effects</a>
+                <a href="#importantChart" class="nav-link">Charts</a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- ========== MAIN CONTENT ========== -->
+    <main class="report-div">
+        <div class="astrovastu_wrapper bg_cream">
+
+            <!-- HERO SECTION -->
+            <section class="hero_sec mt-3">
+                <div class="hero_wrapper d-flex justify-content-between align-items-center flex-wrap gap-3">
+                    <div class="hero_sec_txt">
+                        <h1>Vedic Astrology Kundli Report</h1>
+                        <p>Comprehensive birth chart analysis</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== BASIC DETAILS ========== -->
+            <section id="basicDetails" class="basic_details_sec cstm_sec_margin_bt">
+                <div class="para_wrapper top_sec_border">
+                    <h3 class="para_head_txt">
+                        <i class="fas fa-user me-2"></i>Basic Details
+                    </h3>
+
+                    <div class="table-responsive">
+                        <table class="table basic_details_table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Field</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="basic_td_data">Name</td>
+                                    <td>vatapatra himachalam</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Date of Birth</td>
+                                    <td>2 August 1997</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Time of Birth</td>
+                                    <td>08:08 AM</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Place of Birth</td>
+                                    <td>Sanyasiputtugu, Andhra Pradesh, India</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Latitude</td>
+                                    <td>19.0580576</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Longitude</td>
+                                    <td>84.7156458</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Time Zone</td>
+                                    <td>+5.5</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Ayanamsa</td>
+                                    <td>23.823345774454</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Sunrise</td>
+                                    <td>5:28:09</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Sunset</td>
+                                    <td>18:26:20</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== BASIC ASTROLOGICAL CONFIGURATION ========== -->
+            <section class="para_sec cstm_sec_margin_bt">
+                <div class="para_wrapper">
+                    <h3 class="para_head_txt">
+                        <i class="fas fa-star me-2"></i>Basic Astrological Configuration
+                    </h3>
+
+                    <div class="table-responsive">
+                        <table class="table basic_details_table mb-0">
+                            <tbody>
+                                <tr>
+                                    <td class="basic_td_data">Lagna (Ascendant)</td>
+                                    <td>Simha (Leo)</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Lagna Lord</td>
+                                    <td>Surya (Sun)</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Varna</td>
+                                    <td>Vipras</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Vashya</td>
+                                    <td>Jalchar</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Yoni</td>
+                                    <td>Marjala</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Gan</td>
+                                    <td>Dev</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Nadi</td>
+                                    <td>Adi</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Rashi (Moon Sign)</td>
+                                    <td>Karkataka (Cancer)</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Rashi Lord</td>
+                                    <td>Chandra (Moon)</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Nakshatra</td>
+                                    <td>Punarvasu</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Nakshatra Lord</td>
+                                    <td>Brihaspati (Jupiter)</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Charana</td>
+                                    <td>4 (4th Pada)</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Yoga</td>
+                                    <td>Vajra</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Karana</td>
+                                    <td>Shakuni</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Tithi</td>
+                                    <td>Krishna Chaturdashi</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Paya</td>
+                                    <td>Rajata (Silver)</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Element</td>
+                                    <td>Jala (Water)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== PLANETARY POSITIONS ========== -->
+            <section id="planeteryPosition" class="planetary_posi_sec cstm_sec_margin_bt">
+                <div class="para_wrapper">
+                    <h3 class="para_head_txt">
+                        <i class="fas fa-globe me-2"></i>Planetary Positions (Geocentric Degrees)
+                    </h3>
+
+                    <div class="table-responsive">
+                        <table class="table basic_details_table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Planet</th>
+                                    <th>Sign</th>
+                                    <th>House</th>
+                                    <th>Degrees</th>
+                                    <th>Retrograde</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="basic_td_data">Surya (Sun)</td>
+                                    <td>Cancer</td>
+                                    <td>12</td>
+                                    <td>106.02921213697</td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Chandra (Moon)</td>
+                                    <td>Cancer</td>
+                                    <td>12</td>
+                                    <td>—</td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Kuja (Mars)</td>
+                                    <td>Virgo</td>
+                                    <td>2</td>
+                                    <td>178.82681197953</td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Budha (Mercury)</td>
+                                    <td>Leo</td>
+                                    <td>1</td>
+                                    <td>133.244174338</td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Guru (Jupiter)</td>
+                                    <td>Capricorn</td>
+                                    <td>6</td>
+                                    <td>294.14381338364</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Shukra (Venus)</td>
+                                    <td>Leo</td>
+                                    <td>1</td>
+                                    <td>137.66755288792</td>
+                                    <td>No</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Shani (Saturn)</td>
+                                    <td>Pisces</td>
+                                    <td>8</td>
+                                    <td>356.53760441323</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Rahu</td>
+                                    <td>Leo</td>
+                                    <td>1</td>
+                                    <td>147.94706064391</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Ketu</td>
+                                    <td>Aquarius</td>
+                                    <td>7</td>
+                                    <td>327.94706064391</td>
+                                    <td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Udaya Lagna</td>
+                                    <td>Leo</td>
+                                    <td>1</td>
+                                    <td>141.94045815518</td>
+                                    <td>—</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== VIMSHOTTARI DASHA ========== -->
+            <section id="vimshottariDasha" class="vimshotari_dasha_sec cstm_sec_margin_bt">
+                <div class="para_wrapper">
+                    <h3 class="para_head_txt">
+                        <i class="fas fa-clock me-2"></i>Vimshottari Dasha Timeline
+                    </h3>
+
+                    <div class="table-responsive">
+                        <table class="table vmsht_dasha_table mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Planet</th>
+                                    <th>Start Date</th>
+                                    <th>End Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="basic_td_data">Brihaspati (Jupiter)</td>
+                                    <td>18-12-1982</td>
+                                    <td>18-12-1998</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Shani (Saturn)</td>
+                                    <td>18-12-1998</td>
+                                    <td>17-12-2017</td>
+                                </tr>
+                                <tr style="background: var(--purple-light);">
+                                    <td class="basic_td_data font700 text_purple">Budha (Mercury) - CURRENT</td>
+                                    <td class="font600">17-12-2017</td>
+                                    <td class="font600">18-12-2034</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Ketu</td>
+                                    <td>18-12-2034</td>
+                                    <td>17-12-2041</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Shukra (Venus)</td>
+                                    <td>17-12-2041</td>
+                                    <td>17-12-2061</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Surya (Sun)</td>
+                                    <td>17-12-2061</td>
+                                    <td>18-12-2067</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Chandra (Moon)</td>
+                                    <td>18-12-2067</td>
+                                    <td>17-12-2077</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Kuja (Mars)</td>
+                                    <td>17-12-2077</td>
+                                    <td>17-12-2084</td>
+                                </tr>
+                                <tr>
+                                    <td class="basic_td_data">Rahu</td>
+                                    <td>17-12-2084</td>
+                                    <td>19-12-2102</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Current Antardasha -->
+                    <div class="mt-4">
+                        <h5 class="sub-header mb-3">
+                            <i class="fas fa-calendar-alt me-2"></i>Current Antardasha (Within Budha Mahadasha)
+                        </h5>
+                        <div class="ydasha_predc_wrapper">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <span class="font600">Planet:</span> Chandra (Moon)
+                                </div>
+                                <div>
+                                    <span class="font600">Start:</span> 16-01-2025
+                                </div>
+                                <div>
+                                    <span class="font600">End:</span> 18-06-2026
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== NUMEROLOGY ========== -->
+            <section id="numorologyPrediction" class="neumerology_sec cstm_sec_margin_bt">
+                <div class="para_wrapper">
+                    <h3 class="para_head_txt">
+                        <i class="fas fa-calculator me-2"></i>Numerology
+                    </h3>
+
+                    <div class="numbers_container d-flex justify-content-center flex-wrap gap-4">
+                        <div class="density_num_cont text-center">
+                            <div class="font12 text-muted">Fame Number</div>
+                            <div class="nurology_circle_txt text_purple">9</div>
+                        </div>
+                        <div class="name_num_cont text-center">
+                            <div class="font12 text-muted">Soul Root Number</div>
+                            <div class="nurology_circle_txt text_purple">2</div>
+                        </div>
+                        <div class="redical_num_cont text-center">
+                            <div class="font12 text-muted">Name Number</div>
+                            <div class="nurology_circle_txt text_purple">2</div>
+                        </div>
+                        <div class="evil_num_cont text-center">
+                            <div class="font12 text-muted">Unlucky Number</div>
+                            <div class="nurology_circle_txt text-danger">5</div>
+                        </div>
+                        <div class="name_num_cont text-center">
+                            <div class="font12 text-muted">Destiny Number</div>
+                            <div class="nurology_circle_txt text_purple">9</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== GEMSTONES ========== -->
+            <section id="gemStonePrediction" class="gemstone_prediction_sec cstm_sec_margin_bt">
+                <div class="gemstone_main_wrapper">
+                    <h3 class="gemstone_head_txt mb-4">
+                        <i class="fas fa-gem me-2"></i>Recommended Gemstones
+                    </h3>
+
+                    <div class="row g-4">
+                        <!-- Ruby -->
+                        <div class="col-md-4">
+                            <div class="gemstne_wrapper text-center">
+                                <div class="stone_img_container mx-auto mb-3">
+                                    <img src="https://via.placeholder.com/50x50/ff0000/ffffff?text=R" alt="Ruby" class="img-fluid rounded-circle">
+                                </div>
+                                <h5 class="text_purple font700">Ruby (Sun)</h5>
+                                <p class="font14 mb-1"><strong>Day:</strong> Sunday</p>
+                                <p class="font14 mb-1"><strong>Finger:</strong> Ring</p>
+                                <p class="font14 mb-1"><strong>Metal:</strong> Gold</p>
+                                <p class="font14 mb-2"><strong>Weight:</strong> 3-6 carat</p>
+                                <div class="font12 text-muted p-2 bg_cream rounded">
+                                    ॐ सूर्याय नमः
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Yellow Sapphire -->
+                        <div class="col-md-4">
+                            <div class="gemstne_wrapper text-center">
+                                <div class="stone_img_container mx-auto mb-3">
+                                    <img src="https://via.placeholder.com/50x50/ffff00/333333?text=Y" alt="Yellow Sapphire" class="img-fluid rounded-circle">
+                                </div>
+                                <h5 class="text_purple font700">Yellow Sapphire (Jupiter)</h5>
+                                <p class="font14 mb-1"><strong>Day:</strong> Thursday</p>
+                                <p class="font14 mb-1"><strong>Finger:</strong> Index</p>
+                                <p class="font14 mb-1"><strong>Metal:</strong> Gold</p>
+                                <p class="font14 mb-2"><strong>Weight:</strong> 7 carat</p>
+                                <div class="font12 text-muted p-2 bg_cream rounded">
+                                    ॐ ग्रां ग्रीं ग्रौं सः गुरवे नमः
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Red Coral -->
+                        <div class="col-md-4">
+                            <div class="gemstne_wrapper text-center">
+                                <div class="stone_img_container mx-auto mb-3">
+                                    <img src="https://via.placeholder.com/50x50/ff6600/ffffff?text=C" alt="Red Coral" class="img-fluid rounded-circle">
+                                </div>
+                                <h5 class="text_purple font700">Red Coral (Mars)</h5>
+                                <p class="font14 mb-1"><strong>Day:</strong> Tuesday</p>
+                                <p class="font14 mb-1"><strong>Finger:</strong> Ring/Middle</p>
+                                <p class="font14 mb-1"><strong>Metal:</strong> Gold/Copper</p>
+                                <p class="font14 mb-2"><strong>Weight:</strong> 7 carat</p>
+                                <div class="font12 text-muted p-2 bg_cream rounded">
+                                    ॐ अंग अंगारकाय नमः
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== RUDAKSHA ========== -->
+            <section id="rudrakshaPrediction" class="rudraksha_prediction_sec cstm_sec_margin_bt">
+                <div class="para_wrapper">
+                    <h3 class="para_head_txt">
+                        <i class="fas fa-circle-notch me-2"></i>Prescribed Rudraksha
+                    </h3>
+
+                    <div class="d-flex align-items-center gap-4 p-4 bg_pink_light rounded-4">
+                        <div class="rudraksh_container">
+                            <span class="font22 font700 text_purple">8</span>
+                        </div>
+                        <div>
+                            <h4 class="text_purple font700 mb-2">Eight-Faced (8 Mukhi) Rudraksha</h4>
+                            <p class="para_txt mb-0">Purpose: Removal of obstacles, clarity, intelligence</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== SADE SATI ========== -->
+            <section id="sadeSati" class="sade_sati_sec cstm_sec_margin_bt">
+                <div class="para_wrapper">
+                    <h3 class="para_head_txt">
+                        <i class="fas fa-moon me-2"></i>Sade Sati Analysis
+                    </h3>
+
+                    <div class="saturday_wrapper">
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <p class="mb-1 font600">Saturn Sign:</p>
+                                <p class="text_purple font700">Meena (Pisces)</p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <p class="mb-1 font600">Moon Sign:</p>
+                                <p class="text_purple font700">Karkataka (Cancer)</p>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <p class="mb-1 font600">Current Sade Sati:</p>
+                                <p class="text-success font700">Not Active</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== KAAL SARP ========== -->
+            <section id="kaalSarpaDasha" class="kaalsarp_dasha_sec cstm_sec_margin_bt">
+                <div class="para_wrapper">
+                    <h3 class="para_head_txt">
+                        <i class="fas fa-snake me-2"></i>Kaal Sarp Yoga
+                    </h3>
+
+                    <div class="kaalsarp_dasha_wrapper">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="plnt_img_cnt">
+                                <i class="fas fa-check-circle text-success fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Kaal Sarp Yoga</h5>
+                                <p class="mb-0 text-muted">Not Present</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== MANGALIK ========== -->
+            <section id="mangalDosh" class="mangal_dosh_sec cstm_sec_margin_bt">
+                <div class="para_wrapper">
+                    <h3 class="para_head_txt">
+                        <i class="fas fa-fire me-2"></i>Manglik Dosh
+                    </h3>
+
+                    <div class="kaalsarp_dasha_wrapper">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="plnt_img_cnt">
+                                <i class="fas fa-check-circle text-success fa-2x"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-1">Mangal Dosh</h5>
+                                <p class="mb-0 text-muted">Not Manglik (Mars in 2nd house, Virgo)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== PLANET EFFECTS ========== -->
+            <section id="planetEffect" class="planer_effect_sec cstm_sec_margin_bt">
+                <div class="plnt_eft_container rounded-4">
+                    <div class="plnt_eft_header d-flex justify-content-between align-items-center rounded-4 mb-3">
+                        <h4 class="mb-0"><i class="fas fa-planet-ringed me-2"></i>Planet Effects</h4>
+                    </div>
+
+                    <div class="row g-3">
+                        <!-- Sun Effect -->
+                        <div class="col-12">
+                            <div class="p-3 border_purple rounded-2">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <img src="https://via.placeholder.com/30x30/ffff00/333333?text=Su" class="plnt_eft_img rounded-circle" alt="Sun">
+                                    <h6 class="text_purple font700 mb-0">Surya (Sun) - Cancer</h6>
+                                </div>
+                                <p class="para_txt mb-0">Sun in Cancer indicates emotional sensitivity and protective nature. You may have strong intuition and nurturing qualities.</p>
+                            </div>
+                        </div>
+
+                        <!-- Moon Effect -->
+                        <div class="col-12">
+                            <div class="p-3 border_purple rounded-2">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <img src="https://via.placeholder.com/30x30/cccccc/333333?text=Mo" class="plnt_eft_img rounded-circle" alt="Moon">
+                                    <h6 class="text_purple font700 mb-0">Chandra (Moon) - Cancer</h6>
+                                </div>
+                                <p class="para_txt mb-0">Moon in Cancer gives you a caring and imaginative personality. You are emotionally balanced and have strong bonds with family.</p>
+                            </div>
+                        </div>
+
+                        <!-- Mercury Effect -->
+                        <div class="col-12">
+                            <div class="p-3 border_purple rounded-2">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <img src="https://via.placeholder.com/30x30/00ff00/333333?text=Me" class="plnt_eft_img rounded-circle" alt="Mercury">
+                                    <h6 class="text_purple font700 mb-0">Budha (Mercury) - Leo</h6>
+                                </div>
+                                <p class="para_txt mb-0">Mercury in Leo gives you confident communication skills and a creative approach to business and intellect.</p>
+                            </div>
+                        </div>
+
+                        <!-- Jupiter Effect -->
+                        <div class="col-12">
+                            <div class="p-3 border_purple rounded-2">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <img src="https://via.placeholder.com/30x30/ffaa00/333333?text=Ju" class="plnt_eft_img rounded-circle" alt="Jupiter">
+                                    <h6 class="text_purple font700 mb-0">Guru (Jupiter) - Capricorn (Retrograde)</h6>
+                                </div>
+                                <p class="para_txt mb-0">Jupiter in Capricorn gives you practical wisdom and discipline. Retrograde motion may indicate internal growth and introspection.</p>
+                            </div>
+                        </div>
+
+                        <!-- Venus Effect -->
+                        <div class="col-12">
+                            <div class="p-3 border_purple rounded-2">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <img src="https://via.placeholder.com/30x30/ffffff/333333?text=Ve" class="plnt_eft_img rounded-circle" alt="Venus">
+                                    <h6 class="text_purple font700 mb-0">Shukra (Venus) - Leo</h6>
+                                </div>
+                                <p class="para_txt mb-0">Venus in Leo gives you charm, creativity, and love for luxury. You may have an artistic flair and enjoy social activities.</p>
+                            </div>
+                        </div>
+
+                        <!-- Saturn Effect -->
+                        <div class="col-12">
+                            <div class="p-3 border_purple rounded-2">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <img src="https://via.placeholder.com/30x30/333333/ffffff?text=Sa" class="plnt_eft_img rounded-circle" alt="Saturn">
+                                    <h6 class="text_purple font700 mb-0">Shani (Saturn) - Pisces (Retrograde)</h6>
+                                </div>
+                                <p class="para_txt mb-0">Saturn in Pisces indicates spiritual growth through challenges. You may experience karmic lessons related to dreams and intuition.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ========== FOOTER ========== -->
+            <footer class="copyright_wrapper">
+                <div class="d-flex align-items-center justify-content-center gap-2">
+                    <span>©</span>
+                    <span class="font600">2024 Sri Astro Vastu</span>
+                    <span>-</span>
+                    <span>Vedic Astrology Report</span>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- ========== SIDEBAR TOGGLE ========== -->
+    <button class="sidebar-toggle" id="sidebarToggle" onclick="toggleSidebar()">
+        <i class="fas fa-chevron-right"></i>
+    </button>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('sidebar');
+            sidebar.classList.toggle('show');
+
+            const btn = document.getElementById('sidebarToggle');
+            const icon = btn.querySelector('i');
+
+            if (sidebar.classList.contains('show')) {
+                icon.classList.remove('fa-chevron-right');
+                icon.classList.add('fa-chevron-left');
+            } else {
+                icon.classList.remove('fa-chevron-left');
+                icon.classList.add('fa-chevron-right');
+            }
+        }
+
+        // Smooth scroll for nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                    // Update active state
+                    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

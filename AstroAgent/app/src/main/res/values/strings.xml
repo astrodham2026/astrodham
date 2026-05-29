@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AstroAgent</string>
+    <string name="accessibility_service_description">AstroAgent uses accessibility to automate app interactions on your behalf. It can detect UI elements, perform taps, type text, and read screen content. Enable only if you trust this app.</string>
+    <string name="btn_start_listening">🎤 Start Voice Command</string>
+    <string name="btn_stop_listening">⏹ Stop Listening</string>
+    <string name="btn_execute">▶ Execute</string>
+    <string name="btn_stop">⏹ Stop Agent</string>
+    <string name="hint_command">Type a command or use voice…</string>
+    <string name="label_status">Status</string>
+    <string name="label_idle">Idle — Ready for commands</string>
+    <string name="label_listening">🎤 Listening…</string>
+    <string name="label_planning">🧠 Planning actions…</string>
+    <string name="label_executing">⚡ Executing workflow…</string>
+    <string name="label_error">❌ Error occurred</string>
+    <string name="label_done">✅ Workflow complete</string>
+    <string name="label_logs">Agent Log</string>
+    <string name="label_accessibility_warning">⚠ Accessibility Service is not enabled. Tap to open settings.</string>
+    <string name="label_screen_capture_needed">📸 Screen capture permission required for OCR.</string>
+    <string name="notification_channel_name">AstroAgent Screen Capture</string>
+    <string name="notification_channel_desc">Notification for active screen capture session</string>
+    <string name="notification_title">AstroAgent Active</string>
+    <string name="notification_text">Screen capture is running for AI automation</string>
+
+    <!-- Settings & API Key -->
+    <string name="action_settings">Settings</string>
+    <string name="title_api_key">Codemax.pro API Key</string>
+    <string name="desc_api_key">Enter your API key to connect the agent. You can get a key from codemax.pro.</string>
+    <string name="hint_api_key">sk-cm-...</string>
+    <string name="action_save">Save</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="api_key_saved">API Key saved successfully</string>
+    <string name="api_key_required">An API key is required to use the agent.</string>
+</resources>

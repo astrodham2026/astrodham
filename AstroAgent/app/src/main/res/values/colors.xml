@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary brand palette -->
+    <color name="primary">#FF6C3AFF</color>
+    <color name="primary_variant">#FF4A1FD4</color>
+    <color name="on_primary">#FFFFFFFF</color>
+
+    <!-- Secondary accent -->
+    <color name="secondary">#FF00E5FF</color>
+    <color name="secondary_variant">#FF00B8D4</color>
+    <color name="on_secondary">#FF000000</color>
+
+    <!-- Backgrounds -->
+    <color name="background_dark">#FF0D0D1A</color>
+    <color name="surface_dark">#FF1A1A2E</color>
+    <color name="surface_elevated">#FF252542</color>
+    <color name="on_background">#FFFFFFFF</color>
+    <color name="on_surface">#FFE0E0E0</color>
+
+    <!-- Status colors -->
+    <color name="status_success">#FF00E676</color>
+    <color name="status_warning">#FFFFAB40</color>
+    <color name="status_error">#FFFF5252</color>
+    <color name="status_info">#FF448AFF</color>
+
+    <!-- Log level colors -->
+    <color name="log_debug">#FF80CBC4</color>
+    <color name="log_info">#FF82B1FF</color>
+    <color name="log_warn">#FFFFCC80</color>
+    <color name="log_error">#FFEF9A9A</color>
+
+    <!-- Card and divider -->
+    <color name="card_background">#FF1E1E3A</color>
+    <color name="divider">#33FFFFFF</color>
+
+    <!-- Text -->
+    <color name="text_primary">#FFFFFFFF</color>
+    <color name="text_secondary">#B3FFFFFF</color>
+    <color name="text_hint">#66FFFFFF</color>
+
+    <!-- Chat Bubbles -->
+    <color name="bubble_user">#FF6C3AFF</color>
+    <color name="bubble_agent">#FF2A2A4A</color>
+    <color name="chat_background">#FF080811</color>
+</resources>
