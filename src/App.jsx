@@ -84,19 +84,19 @@ const getProcessedTemplate = () => {
   html = html.replace(/<img[^>]*class="[^"]*copyright_logo[^"]*"[^>]*\/?>/gi, '');
   html = html.replace(/<img[^>]*astro-vastu-new-color-logo[^>]*\/?>/gi, '');
   html = html.replace(/<div[^>]*class="[^"]*astro_vastu_logo[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '');
-  // Strip the old shubh labh text completely so we can put it all in one line
+  // Strip the old shubh labh text completely
   html = html.replace(
-    /<div[^>]*class="[^"]*shubh_labh_text[^"]*"[^>]*>\|\| शुभ लाभ \|\|<\/div>/i,
+    /<div[^>]*class="[^"]*shubh_labh_text[^"]*"[^>]*>[\s\S]*?<\/div>/gi,
     ''
   );
 
-  // Redesign the hero text and Ganesha into a single responsive line
+  // Redesign the hero text and Ganesha into a single STRICT single-line flex row
   html = html.replace(
     /<div class="hero_sec_txt">[\s\S]*?<\/div>\s*<\/div>/i,
-    `<div class="hero_sec_txt d-flex align-items-center justify-content-center flex-wrap gap-2 my-3" style="width:100%; text-align:center; z-index: 10; position: relative;">
-         <span class="shubh_labh_text text_brown" style="font-size: clamp(14px, 3vw, 18px); font-weight: bold; white-space: nowrap;">|| शुभ लाभ ||</span>
-         <img src="data:image/png;base64,${newGaneshaBase64}" alt="Lord Ganesha" class="new_ganesha_img" style="height: clamp(35px, 8vw, 55px); width: auto; object-fit: contain; margin: 0 5px;" />
-         <span style="font-size: clamp(14px, 3vw, 18px); font-weight: bold; color: #3D0C6E; white-space: nowrap;" class="text_purple">ప్రీమియం జీవిత కుండలి నివేదిక</span>
+    `<div class="d-flex align-items-center justify-content-center my-3" style="width:100%; text-align:center; z-index: 10; position: relative; flex-wrap: nowrap !important; overflow: hidden;">
+         <span class="text_brown" style="font-size: clamp(10px, 2.5vw, 16px); font-weight: bold; white-space: nowrap;">|| शुभ लाभ ||</span>
+         <img src="data:image/png;base64,${newGaneshaBase64}" alt="Lord Ganesha" class="new_ganesha_img" style="height: clamp(25px, 6vw, 50px); width: auto; object-fit: contain; margin: 0 4px;" />
+         <span style="font-size: clamp(10px, 2.5vw, 16px); font-weight: bold; color: #3D0C6E; white-space: nowrap;">ప్రీమియం జీవిత కుండలి నివేదిక</span>
     </div></div>`
   );
   html = html.replaceAll('https://www.googletagmanager.com/ns.html?id=GTM-PTD4LZR', '');
