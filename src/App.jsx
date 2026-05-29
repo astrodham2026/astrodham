@@ -84,9 +84,20 @@ const getProcessedTemplate = () => {
   html = html.replace(/<img[^>]*class="[^"]*copyright_logo[^"]*"[^>]*\/?>/gi, '');
   html = html.replace(/<img[^>]*astro-vastu-new-color-logo[^>]*\/?>/gi, '');
   html = html.replace(/<div[^>]*class="[^"]*astro_vastu_logo[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '');
+  // Strip the old shubh labh text completely so we can put it all in one line
   html = html.replace(
-    /(<div[^>]*class="[^"]*shubh_labh_text[^"]*"[^>]*>\|\| शुभ लाभ \|\|<\/div>)/i,
-    '$1\n<div class="new_ganesha_wrapper"><img src="data:image/png;base64,' + newGaneshaBase64 + '" alt="Lord Ganesha" class="new_ganesha_img" /></div>'
+    /<div[^>]*class="[^"]*shubh_labh_text[^"]*"[^>]*>\|\| शुभ लाभ \|\|<\/div>/i,
+    ''
+  );
+
+  // Redesign the hero text and Ganesha into a single responsive line
+  html = html.replace(
+    /<div class="hero_sec_txt">[\s\S]*?<\/div>\s*<\/div>/i,
+    `<div class="hero_sec_txt d-flex align-items-center justify-content-center flex-wrap gap-2 my-3" style="width:100%; text-align:center; z-index: 10; position: relative;">
+         <span class="shubh_labh_text text_brown" style="font-size: clamp(14px, 3vw, 18px); font-weight: bold; white-space: nowrap;">|| शुभ लाभ ||</span>
+         <img src="data:image/png;base64,${newGaneshaBase64}" alt="Lord Ganesha" class="new_ganesha_img" style="height: clamp(35px, 8vw, 55px); width: auto; object-fit: contain; margin: 0 5px;" />
+         <span style="font-size: clamp(14px, 3vw, 18px); font-weight: bold; color: #3D0C6E; white-space: nowrap;" class="text_purple">ప్రీమియం జీవిత కుండలి నివేదిక</span>
+    </div></div>`
   );
   html = html.replaceAll('https://www.googletagmanager.com/ns.html?id=GTM-PTD4LZR', '');
 
@@ -102,7 +113,18 @@ const getProcessedTemplate = () => {
       .report-div { margin-left: 285px !important; width: calc(100% - 285px) !important; }
     }
     @media (max-width: 991px) {
-      .sidebar-div, .sidebar-toggle, .sidebar { display: none !important; }
+      /* Restore sidebar and toggle on mobile */
+      .sidebar-div { display: block !important; }
+      .sidebar-toggle { display: flex !important; align-items: center; justify-content: center; z-index: 9999 !important; background: #3D0C6E !important; color: white !important; }
+      .sidebar { 
+        display: block !important;
+        position: fixed !important; 
+        left: -280px !important; 
+        transition: left 0.3s ease !important; 
+        z-index: 9998 !important; 
+      }
+      .sidebar.active { left: 0 !important; }
+      
       .report-div { margin-left: 0 !important; width: 100vw !important; max-width: 100% !important; padding: 10px !important; overflow-x: hidden !important; }
       .main-header { flex-direction: column !important; padding: 15px !important; height: auto !important; }
       .header-logo { max-width: 80% !important; height: auto !important; margin-bottom: 10px !important; }
@@ -119,6 +141,29 @@ const getProcessedTemplate = () => {
       
       /* Ensure chart wrappers scale properly */
       .chart-container, .kundli_birth_chart { max-width: 100% !important; overflow-x: auto !important; }
+    }
+    
+    /* Zodiac Wheel exact alignment */
+    .hero_sec_img {
+      background: url('data:image/png;base64,${zodiacBase64}') no-repeat center center !important;
+      background-size: contain !important;
+      opacity: 0.2 !important;
+      width: 100% !important;
+      height: 100% !important;
+      position: absolute !important;
+      top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
+      margin: auto !important;
+    }
+    
+    /* Extra hero fixes */
+    .hero_wrapper {
+      position: relative !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      padding: 30px 10px !important;
+      min-height: 150px !important;
     }
     
     /* Table headers / Charts */
@@ -171,8 +216,24 @@ removeNow();
 document.addEventListener('DOMContentLoaded', removeNow);
 new MutationObserver(removeNow).observe(document.documentElement, {childList:true,subtree:true});
 })();
-<\/script>`;
-  html = html.replace(/<head>/i, '<head>' + earlyRemoveScript);
+</script>`;
+
+  html = html.replace(
+    '</body>',
+    `${earlyRemoveScript}
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        var toggle = document.getElementById('sidebarToggle');
+        var sidebar = document.getElementById('sidebar');
+        if (toggle && sidebar) {
+          toggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            sidebar.classList.toggle('active');
+          });
+        }
+      });
+    </script></body>`
+  );
 
   return html;
 };
