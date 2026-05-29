@@ -93,10 +93,10 @@ const getProcessedTemplate = () => {
   // Redesign the hero text and Ganesha into a single STRICT single-line flex row
   html = html.replace(
     /<div class="hero_sec_txt">[\s\S]*?<\/div>\s*<\/div>/i,
-    `<div class="d-flex align-items-center justify-content-center my-3" style="width:100%; text-align:center; z-index: 10; position: relative; flex-wrap: nowrap !important; overflow: hidden;">
-         <span class="text_brown" style="font-size: clamp(10px, 2.5vw, 16px); font-weight: bold; white-space: nowrap;">|| शुभ लाभ ||</span>
-         <img src="data:image/png;base64,${newGaneshaBase64}" alt="Lord Ganesha" class="new_ganesha_img" style="height: clamp(25px, 6vw, 50px); width: auto; object-fit: contain; margin: 0 4px;" />
-         <span style="font-size: clamp(10px, 2.5vw, 16px); font-weight: bold; color: #3D0C6E; white-space: nowrap;">ప్రీమియం జీవిత కుండలి నివేదిక</span>
+    `<div class="d-flex align-items-center justify-content-center" style="width:100%; text-align:center; z-index: 10; position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); flex-wrap: nowrap !important; overflow: hidden;">
+         <span class="text_brown" style="font-size: clamp(12px, 2.5vw, 16px); font-weight: bold; white-space: nowrap;">|| शुभ लाभ ||</span>
+         <img src="data:image/png;base64,${newGaneshaBase64}" alt="Lord Ganesha" class="new_ganesha_img" style="height: clamp(30px, 6vw, 50px); width: auto; object-fit: contain; margin: 0 4px;" />
+         <span style="font-size: clamp(12px, 2.5vw, 16px); font-weight: bold; color: #3D0C6E; white-space: nowrap;">ప్రీమియం జీవిత కుండలి నివేదిక</span>
     </div></div>`
   );
   html = html.replaceAll('https://www.googletagmanager.com/ns.html?id=GTM-PTD4LZR', '');
@@ -157,27 +157,10 @@ const getProcessedTemplate = () => {
       .chart-container, .kundli_birth_chart { max-width: 100% !important; overflow-x: auto !important; }
     }
     
-    /* Zodiac Wheel exact alignment */
+    /* Zodiac Wheel background alignment fix without breaking desktop */
     .hero_sec_img {
       background: url('data:image/png;base64,${zodiacBase64}') no-repeat center center !important;
       background-size: contain !important;
-      opacity: 0.2 !important;
-      width: 100% !important;
-      height: 100% !important;
-      position: absolute !important;
-      top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important;
-      margin: auto !important;
-    }
-    
-    /* Extra hero fixes */
-    .hero_wrapper {
-      position: relative !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      padding: 30px 10px !important;
-      min-height: 150px !important;
     }
     
     /* Table headers / Charts */
