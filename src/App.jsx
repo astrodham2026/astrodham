@@ -114,8 +114,22 @@ const getProcessedTemplate = () => {
     }
     @media (max-width: 991px) {
       /* Restore sidebar and toggle on mobile */
-      .sidebar-div { display: block !important; }
-      .sidebar-toggle { display: flex !important; align-items: center; justify-content: center; z-index: 9999 !important; background: #3D0C6E !important; color: white !important; }
+      .sidebar-div { display: block !important; width: 0 !important; height: 0 !important; overflow: visible !important; }
+      .sidebar-toggle { 
+        display: flex !important; 
+        align-items: center !important; 
+        justify-content: center !important; 
+        position: fixed !important; 
+        left: 0 !important; 
+        top: 50% !important; 
+        transform: translateY(-50%) !important; 
+        z-index: 9999 !important; 
+        background: #3D0C6E !important; 
+        color: white !important; 
+        width: 30px !important;
+        height: 50px !important;
+        border-radius: 0 10px 10px 0 !important;
+      }
       .sidebar { 
         display: block !important;
         position: fixed !important; 
