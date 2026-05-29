@@ -109,12 +109,15 @@ const getProcessedTemplate = () => {
   );
 
   const layoutFixCSS = `
+    /* Bulletproof layout structure globally */
+    .sidebar-div { position: absolute !important; width: 0 !important; height: 0 !important; padding: 0 !important; margin: 0 !important; overflow: visible !important; }
+    
     @media (min-width: 992px) {
       .report-div { margin-left: 285px !important; width: calc(100% - 285px) !important; }
     }
+    
     @media (max-width: 991px) {
       /* Restore sidebar and toggle on mobile */
-      .sidebar-div { position: absolute !important; width: 0 !important; height: 0 !important; padding: 0 !important; margin: 0 !important; overflow: visible !important; }
       .sidebar-toggle { 
         display: flex !important; 
         align-items: center !important; 
@@ -157,10 +160,25 @@ const getProcessedTemplate = () => {
       .chart-container, .kundli_birth_chart { max-width: 100% !important; overflow-x: auto !important; }
     }
     
-    /* Zodiac Wheel background alignment fix without breaking desktop */
+    /* Zodiac Wheel background alignment fix */
     .hero_sec_img {
       background: url('data:image/png;base64,${zodiacBase64}') no-repeat center center !important;
       background-size: contain !important;
+      opacity: 0.2 !important;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    
+    /* Prevent the hero banner from expanding vertically to infinity on all screens */
+    .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec {
+      aspect-ratio: 1 / 1 !important;
+      max-height: 400px !important;
+    }
+    
+    @media (min-width: 992px) {
+      .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec {
+        aspect-ratio: auto !important;
+      }
     }
     
     /* Table headers / Charts */
