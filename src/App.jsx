@@ -73,7 +73,7 @@ const getProcessedTemplate = () => {
   html = html.replace(/<title>.*?<\/title>/i, '<title>Astrodham</title>');
   html = html.replace(
     /<link[^>]*rel="icon"[^>]*\/?>/i,
-    `<link rel="icon" href="data:image/png;base64,${logoBase64}" type="image/png">`
+    `<link rel="icon" href="data:image/png;base64,${logoBase64}" type="image/png"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Telugu:wght@400;600;700&display=swap" rel="stylesheet">`
   );
 
   html = html.replaceAll('../../assets/', 'https://paid.sriastrovastu.com/generated-report-files/assets/');
@@ -84,20 +84,10 @@ const getProcessedTemplate = () => {
   html = html.replace(/<img[^>]*class="[^"]*copyright_logo[^"]*"[^>]*\/?>/gi, '');
   html = html.replace(/<img[^>]*astro-vastu-new-color-logo[^>]*\/?>/gi, '');
   html = html.replace(/<div[^>]*class="[^"]*astro_vastu_logo[^"]*"[^>]*>[\s\S]*?<\/div>/gi, '');
-  // Strip the old shubh labh text completely
+  /* Inject Zodiac wheel IMG inside hero_sec_img + Ganesha wrapper after it, both inside hero_sec */
   html = html.replace(
-    /<div[^>]*class="[^"]*shubh_labh_text[^"]*"[^>]*>[\s\S]*?<\/div>/gi,
-    ''
-  );
-
-  // Redesign the hero text and Ganesha into a single STRICT single-line flex row
-  html = html.replace(
-    /<div class="hero_sec_txt">[\s\S]*?<\/div>\s*<\/div>/i,
-    `<div class="d-flex align-items-center justify-content-center" style="width:100%; text-align:center; z-index: 10; position: absolute; bottom: 5%; left: 50%; transform: translateX(-50%); flex-wrap: nowrap !important; overflow: hidden;">
-         <span class="text_brown" style="font-size: clamp(12px, 2.5vw, 16px); font-weight: bold; white-space: nowrap;">|| शुभ लाभ ||</span>
-         <img src="data:image/png;base64,${newGaneshaBase64}" alt="Lord Ganesha" class="new_ganesha_img" style="height: clamp(30px, 6vw, 50px); width: auto; object-fit: contain; margin: 0 4px;" />
-         <span style="font-size: clamp(12px, 2.5vw, 16px); font-weight: bold; color: #3D0C6E; white-space: nowrap;">ప్రీమియం జీవిత కుండలి నివేదిక</span>
-    </div></div>`
+    /(<div[^>]*class="[^"]*hero_sec_img[^"]*"[^>]*>)[\s\S]*?(<\/div>)/i,
+    '$1<img src="data:image/png;base64,' + zodiacBase64 + '" alt="Zodiac Wheel" class="zodiac_wheel_img" />$2\n<div class="new_ganesha_wrapper"><img src="data:image/png;base64,' + newGaneshaBase64 + '" alt="Lord Ganesha" class="new_ganesha_img" /></div>'
   );
   html = html.replaceAll('https://www.googletagmanager.com/ns.html?id=GTM-PTD4LZR', '');
 
@@ -109,76 +99,11 @@ const getProcessedTemplate = () => {
   );
 
   const layoutFixCSS = `
-    /* Bulletproof layout structure globally */
-    .sidebar-div { position: absolute !important; width: 0 !important; height: 0 !important; padding: 0 !important; margin: 0 !important; overflow: visible !important; }
-    
     @media (min-width: 992px) {
       .report-div { margin-left: 285px !important; width: calc(100% - 285px) !important; }
     }
-    
     @media (max-width: 991px) {
-      /* Restore sidebar and toggle on mobile */
-      .sidebar-toggle { 
-        display: flex !important; 
-        align-items: center !important; 
-        justify-content: center !important; 
-        position: fixed !important; 
-        left: 0 !important; 
-        top: 50% !important; 
-        transform: translateY(-50%) !important; 
-        z-index: 9999 !important; 
-        background: #3D0C6E !important; 
-        color: white !important; 
-        width: 30px !important;
-        height: 50px !important;
-        border-radius: 0 10px 10px 0 !important;
-      }
-      .sidebar { 
-        display: block !important;
-        position: fixed !important; 
-        left: -280px !important; 
-        transition: left 0.3s ease !important; 
-        z-index: 9998 !important; 
-      }
-      .sidebar.active { left: 0 !important; }
-      
-      .report-div { margin-left: 0 !important; width: 100% !important; flex: 0 0 100% !important; max-width: 100% !important; padding: 10px !important; overflow-x: hidden !important; }
-      .main-header { flex-direction: column !important; padding: 15px !important; height: auto !important; }
-      .header-logo { max-width: 80% !important; height: auto !important; margin-bottom: 10px !important; }
-      
-      /* Force all tables to scroll horizontally on mobile instead of breaking screen width */
-      table, .table { 
-        display: block !important; 
-        width: 100% !important; 
-        max-width: 100% !important;
-        overflow-x: auto !important; 
-        -webkit-overflow-scrolling: touch; 
-        white-space: nowrap !important;
-      }
-      
-      /* Ensure chart wrappers scale properly */
-      .chart-container, .kundli_birth_chart { max-width: 100% !important; overflow-x: auto !important; }
-    }
-    
-    /* Zodiac Wheel background alignment fix */
-    .hero_sec_img {
-      background: url('data:image/png;base64,${zodiacBase64}') no-repeat center center !important;
-      background-size: contain !important;
-      opacity: 0.2 !important;
-      width: 100% !important;
-      height: 100% !important;
-    }
-    
-    /* Prevent the hero banner from expanding vertically to infinity on all screens */
-    .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec {
-      aspect-ratio: 1 / 1 !important;
-      max-height: 400px !important;
-    }
-    
-    @media (min-width: 992px) {
-      .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec {
-        aspect-ratio: auto !important;
-      }
+      .report-div { margin-left: 0 !important; width: 100% !important; }
     }
     
     /* Table headers / Charts */
@@ -211,6 +136,139 @@ const getProcessedTemplate = () => {
     .sub-header:not(.chart_head_name):not(.basic_table_head_txt) * {
       color: #3D0C6E !important;
     }
+
+    /* ── FIX 1: Telugu text — kill the 5px letter-spacing that breaks ligatures ── */
+    .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .prm_txt,
+    .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .lifeknd_txt,
+    .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .report_txt,
+    .prm_txt, .lifeknd_txt, .report_txt {
+      letter-spacing: 0 !important;
+      word-spacing: 0 !important;
+      font-family: 'Noto Serif Telugu', 'Noto Sans Telugu', serif !important;
+      font-feature-settings: 'liga' 1, 'calt' 1 !important;
+      -webkit-font-feature-settings: 'liga' 1, 'calt' 1 !important;
+      text-rendering: optimizeLegibility !important;
+    }
+
+    /* ── DESKTOP: Zodiac wheel (now an actual img) + Ganesha ── */
+    @media (min-width: 768px) {
+      .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec {
+        position: relative !important;
+        width: 100% !important;
+        min-height: 450px !important;
+      }
+      .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec_img {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        width: 100% !important;
+        min-height: 450px !important;
+      }
+      .zodiac_wheel_img {
+        width: 35% !important;
+        height: auto !important;
+        display: block !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        z-index: 5 !important;
+      }
+    }
+
+    /* ── FIX 2: Hero section + Ganesha + Zodiac Wheel on mobile ── */
+    @media (max-width: 767px) {
+
+      /* Hero wrapper: flex column so shubh_labh → hero_sec → text stack vertically */
+      .astrovastu_main_body .astrovastu_wrapper .hero_wrapper {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        overflow: visible !important;
+        padding: 0 !important;
+      }
+
+      /* shubh_labh: take it OUT of absolute, flow it at the TOP */
+      .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .shubh_labh_text {
+        position: relative !important;
+        left: auto !important;
+        transform: none !important;
+        top: auto !important;
+        text-align: center !important;
+        width: 100% !important;
+        font-size: 24px !important;
+        padding: 12px 0 8px !important;
+        z-index: 20 !important;
+        order: 1 !important;
+      }
+
+      /* Hero section: in flex flow, SECOND */
+      .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec {
+        width: 100% !important;
+        height: 280px !important;
+        aspect-ratio: unset !important;
+        position: relative !important;
+        flex-shrink: 0 !important;
+        order: 2 !important;
+      }
+
+      /* Zodiac wheel: fill hero_sec properly on mobile */
+      .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec_img {
+        height: 280px !important;
+        background-size: 85% !important;
+        background-position: center center !important;
+        background-repeat: no-repeat !important;
+      }
+
+      /* Ganesha: centered inside hero_sec (now a sibling inside hero_sec) */
+      .new_ganesha_wrapper {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%) !important;
+        width: auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        z-index: 10 !important;
+      }
+      .new_ganesha_img {
+        max-height: 220px !important;
+        width: auto !important;
+        object-fit: contain !important;
+      }
+
+      /* Telugu title text: BELOW hero_sec, in flex flow, THIRD */
+      .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .hero_sec_txt {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 12px 16px 4px !important;
+        width: 100% !important;
+        order: 3 !important;
+      }
+
+      /* Telugu title font sizes for mobile */
+      .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .prm_txt {
+        font-size: 18px !important;
+      }
+      .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .lifeknd_txt {
+        font-size: 20px !important;
+      }
+      .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .report_txt {
+        font-size: 18px !important;
+      }
+
+      /* Line container: give small top margin */
+      .astrovastu_main_body .astrovastu_wrapper .hero_wrapper .line_container {
+        margin-top: 6px !important;
+        order: 4 !important;
+      }
+    }
   `;
   const inlineCSS = `<style id="astrodham-bundled-css">${bundledTemplateCSS}\n${layoutFixCSS}</style>`;
   html = html.replace(/<link[^>]*rel=["']stylesheet["'][^>]*\/?>/gi, '');
@@ -231,24 +289,8 @@ removeNow();
 document.addEventListener('DOMContentLoaded', removeNow);
 new MutationObserver(removeNow).observe(document.documentElement, {childList:true,subtree:true});
 })();
-</script>`;
-
-  html = html.replace(
-    '</body>',
-    `${earlyRemoveScript}
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        var toggle = document.getElementById('sidebarToggle');
-        var sidebar = document.getElementById('sidebar');
-        if (toggle && sidebar) {
-          toggle.addEventListener('click', function(e) {
-            e.preventDefault();
-            sidebar.classList.toggle('active');
-          });
-        }
-      });
-    </script></body>`
-  );
+<\/script>`;
+  html = html.replace(/<head>/i, '<head>' + earlyRemoveScript);
 
   return html;
 };
@@ -523,32 +565,84 @@ export default function App() {
           background-color: ${T.offWhite} !important;
         }
 
-        /* Zodiac wheel — reduced to 30% of original size */
-        .hero_sec_img {
-          background-image: url("data:image/jpeg;base64,${zodiacBase64}") !important;
-          background-size: 30% !important;
-          background-position: center center !important;
-          background-repeat: no-repeat !important;
+        /* Zodiac wheel is now an actual <img>, no background-image needed */
+        .hero_sec {
+          position: relative !important;
         }
+        .hero_sec_img {
+          display: flex !important;
+          justify-content: center !important;
+          align-items: center !important;
+        }
+        .zodiac_wheel_img {
+          display: block !important;
+          margin: 0 auto !important;
+        }
+
+        /* Desktop zodiac sizing */
+        @media (min-width: 768px) {
+          .hero_sec {
+            width: 100% !important;
+            min-height: 450px !important;
+          }
+          .hero_sec_img {
+            width: 100% !important;
+            min-height: 450px !important;
+          }
+          .zodiac_wheel_img {
+            width: 35% !important;
+            height: auto !important;
+            position: relative !important;
+            z-index: 5 !important;
+          }
+        }
+
         /* Lord Ganesha div — permanently hidden */
         .astro_vastu_logo, .astro_vastu_logo_wrap {
           display: none !important;
         }
 
-        /* New Ganesha Image styling */
+        /* New Ganesha Image styling — Ganesha is now INSIDE hero_sec */
         .new_ganesha_wrapper {
           position: absolute;
-          top: 13%;
+          top: 50%;
           left: 50%;
-          transform: translateX(-50%);
+          transform: translate(-50%, -50%);
           z-index: 10;
           display: flex;
           justify-content: center;
+          align-items: center;
+          width: 100%;
         }
         .new_ganesha_img {
           width: auto;
-          max-height: 220px;
+          max-height: 85%;
           object-fit: contain;
+        }
+
+        /* Mobile: zodiac wheel sizing */
+        @media (max-width: 767px) {
+          .zodiac_wheel_img {
+            width: 88% !important;
+            height: auto !important;
+          }
+          .hero_sec_img {
+            min-height: 280px !important;
+          }
+          .new_ganesha_img {
+            max-height: 220px !important;
+          }
+        }
+
+        /* Telugu text ligature fix — use system-ui (phone's native Telugu font) + kill letter-spacing */
+        .prm_txt, .lifeknd_txt, .report_txt,
+        .hero_sec_txt span {
+          font-family: system-ui, -apple-system, 'Noto Serif Telugu', 'Noto Sans Telugu', sans-serif !important;
+          letter-spacing: 0 !important;
+          word-spacing: 0 !important;
+          font-feature-settings: 'liga' 1, 'calt' 1 !important;
+          -webkit-font-feature-settings: 'liga' 1, 'calt' 1 !important;
+          text-rendering: optimizeLegibility !important;
         }
 
         /* Edit highlight */
@@ -587,8 +681,11 @@ export default function App() {
       purgeUnwanted(); // run immediately
 
       /* ── MutationObserver: kills any re-injection by template CDN JS ── */
+      let purgeCount = 0;
       const observer = new iframe.contentWindow.MutationObserver(() => {
         purgeUnwanted();
+        purgeCount++;
+        if (purgeCount >= 5) observer.disconnect(); // stop after initial cleanup
       });
       observer.observe(doc.body, { childList: true, subtree: true, attributes: false });
 
@@ -666,28 +763,28 @@ export default function App() {
       {/* ══ 1. HEADER ══════════════════════════════════════════ */}
       <header
         style={{ background: `linear-gradient(135deg, ${T.purpleDark} 0%, ${T.purple} 100%)`, borderBottom: `1px solid ${T.shellBorder}` }}
-        className="min-h-[4rem] px-4 py-3 flex flex-col lg:flex-row items-center justify-between gap-4 shadow-2xl z-50 sticky top-0"
+        className="h-16 px-6 flex items-center justify-between shadow-2xl z-50 sticky top-0"
       >
         {/* Logo + Title */}
-        <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-center sm:text-left w-full lg:w-auto">
-          <div style={{ background: T.white }} className="h-10 sm:h-12 px-2 rounded-xl shadow-lg flex items-center justify-center">
-            <img src={`data:image/png;base64,${logoBase64}`} style={{ height: '36px', width: 'auto', maxWidth: '160px', objectFit: 'contain' }} alt="Astrodham" />
+        <div className="flex items-center gap-3">
+          <div style={{ background: T.white }} className="h-12 px-2 rounded-xl shadow-lg flex items-center justify-center">
+            <img src={`data:image/png;base64,${logoBase64}`} style={{ height: '44px', width: 'auto', maxWidth: '160px', objectFit: 'contain' }} alt="Astrodham" />
           </div>
           <div>
-            <h1 style={{ color: T.gold }} className="font-extrabold text-xs sm:text-sm tracking-widest leading-none">
+            <h1 style={{ color: T.gold }} className="font-extrabold text-sm tracking-widest leading-none">
               ASTRODHAM TEMPLATE EDITOR
             </h1>
-            <p style={{ color: T.amber }} className="text-[9px] sm:text-[10px] font-bold mt-1 uppercase tracking-wider">
+            <p style={{ color: T.amber }} className="text-[10px] font-bold mt-1 uppercase tracking-wider">
               Premium Astrology Report Customizer
             </p>
           </div>
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-2 w-full lg:w-auto">
+        <div className="flex items-center gap-3">
           <span
             style={{ background: T.shellCard, color: T.gold, border: `1px solid ${T.shellBorder}` }}
-            className="hidden xl:flex text-[10px] font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full items-center gap-1.5"
+            className="text-[10px] font-black uppercase tracking-wider px-3.5 py-1.5 rounded-full flex items-center gap-1.5"
           >
             <Edit3 size={11} /> DIRECT EDIT ACTIVE
           </span>
@@ -698,25 +795,25 @@ export default function App() {
               ? { background: T.purple, border: `1px solid ${T.gold}`, color: T.gold }
               : { background: T.shellCard, color: '#c4b0e8', border: `1px solid ${T.shellBorder}` }
             }
-            className="px-4 py-2 flex-1 lg:flex-none justify-center rounded-full font-bold text-[10px] sm:text-xs uppercase tracking-wider flex items-center gap-2 transition-all"
+            className="px-5 py-2 rounded-full font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all"
           >
-            <Compass size={14} /> <span className="hidden sm:inline">Update Charts</span><span className="sm:hidden">Charts</span> {isDrawerOpen ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
+            <Compass size={14} /> Update Charts {isDrawerOpen ? <ChevronUp size={12} /> : <ChevronDown size={12} />}
           </button>
 
           <button
             onClick={() => { iframeRef.current?.contentWindow?.focus(); iframeRef.current?.contentWindow?.print(); }}
             style={{ background: T.shellCard, color: '#c4b0e8', border: `1px solid ${T.shellBorder}` }}
-            className="px-4 py-2 flex-1 lg:flex-none justify-center rounded-full font-bold text-[10px] sm:text-xs uppercase tracking-wider flex items-center gap-2 transition-all hover:brightness-125"
+            className="px-4 py-2 rounded-full font-bold text-xs uppercase tracking-wider flex items-center gap-2 transition-all hover:brightness-125"
           >
-            <Printer size={14} /> Print
+            <Printer size={14} /> Print / PDF
           </button>
 
           <button
             onClick={exportHtmlReport}
             style={{ background: `linear-gradient(135deg, ${T.purple}, ${T.gold})` }}
-            className="px-5 py-2 flex-1 lg:flex-none justify-center rounded-full font-bold text-[10px] sm:text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg text-white transition-all hover:brightness-110"
+            className="px-6 py-2 rounded-full font-bold text-xs uppercase tracking-widest flex items-center gap-2 shadow-lg text-white transition-all hover:brightness-110"
           >
-            <Download size={14} /> Export
+            <Download size={14} /> Export Clean HTML
           </button>
         </div>
       </header>
